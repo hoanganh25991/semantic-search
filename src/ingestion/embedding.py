@@ -35,3 +35,10 @@ def load_embedding_model():
             model = SentenceTransformer(model_name)
             model = model.to(device)
     return model
+
+if __name__ == "__main__":
+    print("---------------- generate_embedding ----------------")
+    content_01 = "Each chunk of text is converted into a vector representation using advanced embedding techniques"
+    embedding_01 = generate_embedding(content_01)
+    print(f"Content: {content_01}")
+    print(f"Content embedding: length: {len(embedding_01)}, value: {embedding_01[:50]}...")
